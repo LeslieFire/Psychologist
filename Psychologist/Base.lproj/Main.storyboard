@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Psychologist View Controller-->
+        <!--Phychologist-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="PsychologistViewController" customModule="Psychologist" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,6 +33,9 @@
                                         <exclude reference="T4V-cj-TEb"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="d8e-Sp-znr" kind="showDetail" identifier="happy" id="k69-Pp-Koq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MhJ-SR-tth">
                                 <rect key="frame" x="207" y="230" width="187" height="41"/>
@@ -50,6 +53,9 @@
                                         <exclude reference="ec3-5Y-j1v"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="d8e-Sp-znr" kind="showDetail" identifier=" " id="z54-Yq-eDi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33M-hI-UtD">
                                 <rect key="frame" x="208" y="328" width="185" height="41"/>
@@ -67,9 +73,12 @@
                                         <exclude reference="iub-4z-RDO"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="d8e-Sp-znr" kind="showDetail" identifier="sad" id="jmC-Ua-5vE"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="What do you see in your dream?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Xpz-ia-494">
-                                <rect key="frame" x="16" y="28" width="568" height="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you see in your dream?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Xpz-ia-494">
+                                <rect key="frame" x="16" y="72" width="568" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -100,7 +109,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="uMt-ay-HEd"/>
+                    <navigationItem key="navigationItem" title="Phychologist" id="uMt-ay-HEd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -157,7 +166,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="423" y="974"/>
+            <point key="canvasLocation" x="1002" y="1094"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Ims-07-gcx">
@@ -191,4 +200,7 @@
             <point key="canvasLocation" x="423" y="211"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="jmC-Ua-5vE"/>
+    </inferredMetricsTieBreakers>
 </document>
