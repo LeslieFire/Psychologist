@@ -34,7 +34,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="d8e-Sp-znr" kind="showDetail" identifier="happy" id="k69-Pp-Koq"/>
+                                    <segue destination="dYt-Q8-SCJ" kind="showDetail" identifier="happy" id="k69-Pp-Koq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MhJ-SR-tth">
@@ -54,7 +54,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="d8e-Sp-znr" kind="showDetail" identifier=" " id="z54-Yq-eDi"/>
+                                    <segue destination="dYt-Q8-SCJ" kind="showDetail" identifier=" meh" id="z54-Yq-eDi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33M-hI-UtD">
@@ -74,7 +74,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="d8e-Sp-znr" kind="showDetail" identifier="sad" id="jmC-Ua-5vE"/>
+                                    <segue destination="dYt-Q8-SCJ" kind="showDetail" identifier="sad" id="jmC-Ua-5vE"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you see in your dream?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Xpz-ia-494">
@@ -115,10 +115,10 @@
             </objects>
             <point key="canvasLocation" x="1243" y="211"/>
         </scene>
-        <!--Happiness View Controller-->
+        <!--Diagnosed Happiness View Controller-->
         <scene sceneID="Ju5-Cp-HJr">
             <objects>
-                <viewController id="d8e-Sp-znr" customClass="HappinessViewController" customModule="Psychologist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="d8e-Sp-znr" customClass="DiagnosedHappinessViewController" customModule="Psychologist" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZkI-kV-O8F"/>
                         <viewControllerLayoutGuide type="bottom" id="bhH-7a-xgi"/>
@@ -128,7 +128,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="rnb-qy-SeO" customClass="FaceView" customModule="Psychologist" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <userDefinedRuntimeAttributes>
@@ -155,6 +155,19 @@
                             <constraint firstItem="rnb-qy-SeO" firstAttribute="top" secondItem="gcI-Gf-8ad" secondAttribute="top" id="iKN-Kr-2ja"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="6gZ-a4-0jf"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="Rnk-Bv-OHS">
+                        <barButtonItem key="rightBarButtonItem" title="History" id="vTJ-nN-EMb">
+                            <connections>
+                                <segue destination="d88-5o-rES" kind="popoverPresentation" identifier="Show Diagnostic History" popoverAnchorBarButtonItem="vTJ-nN-EMb" id="7iG-Hl-XNL">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="faceView" destination="rnb-qy-SeO" id="jkQ-tg-PyY"/>
                     </connections>
@@ -166,7 +179,43 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1002" y="1094"/>
+            <point key="canvasLocation" x="1243" y="1140"/>
+        </scene>
+        <!--Text View Controller-->
+        <scene sceneID="Aqy-pe-iBD">
+            <objects>
+                <viewController id="d88-5o-rES" customClass="TextViewController" customModule="Psychologist" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="meu-j7-jsR"/>
+                        <viewControllerLayoutGuide type="bottom" id="UxV-ai-fje"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yE6-D2-rnT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVO-sy-2rU">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jVO-sy-2rU" secondAttribute="trailing" id="76P-y9-GLX"/>
+                            <constraint firstItem="jVO-sy-2rU" firstAttribute="bottom" secondItem="UxV-ai-fje" secondAttribute="top" id="8mQ-Ee-t1R"/>
+                            <constraint firstItem="jVO-sy-2rU" firstAttribute="leading" secondItem="yE6-D2-rnT" secondAttribute="leading" id="Svb-a1-CUs"/>
+                            <constraint firstItem="jVO-sy-2rU" firstAttribute="top" secondItem="yE6-D2-rnT" secondAttribute="top" id="ymN-fZ-v0I"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="TextView" destination="jVO-sy-2rU" id="6k9-GW-AfG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hvi-ce-ChQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1961" y="1140"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Ims-07-gcx">
@@ -174,7 +223,7 @@
                 <splitViewController id="Tqi-4O-2py" sceneMemberID="viewController">
                     <connections>
                         <segue destination="50o-iG-2zF" kind="relationship" relationship="masterViewController" id="5Vh-fe-w1A"/>
-                        <segue destination="d8e-Sp-znr" kind="relationship" relationship="detailViewController" id="8qi-iY-Yzf"/>
+                        <segue destination="dYt-Q8-SCJ" kind="relationship" relationship="detailViewController" id="8qi-iY-Yzf"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11S-6R-e2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -199,8 +248,26 @@
             </objects>
             <point key="canvasLocation" x="423" y="211"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NnE-Cx-QAG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dYt-Q8-SCJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tRa-aN-gNZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="d8e-Sp-znr" kind="relationship" relationship="rootViewController" id="VnL-Xy-B0x"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fhp-bv-fuL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="423" y="1140"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jmC-Ua-5vE"/>
+        <segue reference="z54-Yq-eDi"/>
     </inferredMetricsTieBreakers>
 </document>
